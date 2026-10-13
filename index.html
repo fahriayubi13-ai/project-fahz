@@ -1,0 +1,102 @@
+html = r'''<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d16">
+<title>CREATOR MONEY MANAGER</title>
+<style>
+:root{--bg:#080d16;--panel:#111a29;--panel2:#152237;--text:#eef5ff;--muted:#8fa2bc;--line:#26364e;--blue:#36a5ff;--cyan:#57e4ff;--green:#44d7a0;--red:#ff6e7d;--yellow:#ffd166;--shadow:0 12px 32px #0003}
+body.light{--bg:#f2f6fb;--panel:#fff;--panel2:#edf4fc;--text:#142033;--muted:#61738c;--line:#dce5f0;--blue:#087de0;--cyan:#00a6c7;--green:#078e65;--red:#d94154;--yellow:#a66b00;--shadow:0 12px 30px #17345b12}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 85% 0%,#10325755,transparent 35%),var(--bg);color:var(--text);font:14px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;transition:background .2s,color .2s}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}.app{display:grid;grid-template-columns:250px minmax(0,1fr);min-height:100vh}.sidebar{padding:24px 16px;border-right:1px solid var(--line);background:color-mix(in srgb,var(--panel) 85%,transparent);position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:24px}.brand{display:flex;gap:12px;align-items:center;padding:0 8px}.brand-icon{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--blue),#665dff);display:grid;place-items:center;font-size:21px;box-shadow:0 6px 24px #168bff44}.brand strong{display:block;font-size:13px;letter-spacing:.07em}.brand small{color:var(--muted)}.nav-label{font-size:10px;color:var(--muted);font-weight:800;letter-spacing:.16em;padding:0 12px}.nav{display:grid;gap:5px}.nav button{border:0;color:var(--muted);background:transparent;text-align:left;padding:11px 12px;border-radius:12px;display:flex;align-items:center;gap:12px}.nav button .ico{font-size:17px;width:22px;text-align:center}.nav button.active,.nav button:hover{background:linear-gradient(90deg,#168bff25,transparent);color:var(--text)}.nav button.active{box-shadow:inset 3px 0 var(--blue)}.sidebar-bottom{margin-top:auto;background:var(--panel2);padding:14px;border:1px solid var(--line);border-radius:16px}.sidebar-bottom p{color:var(--muted);font-size:12px;margin:5px 0 12px}.main{min-width:0;padding:26px clamp(16px,3vw,38px) 48px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}.eyebrow{color:var(--blue);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.topbar h1{font-size:clamp(23px,3vw,31px);margin:4px 0 0;letter-spacing:-.04em}.top-actions{display:flex;gap:8px;align-items:center}.icon-btn,.btn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:12px;padding:10px 13px}.btn.primary{background:linear-gradient(135deg,var(--blue),#526bff);border:0;color:white;font-weight:750;box-shadow:0 7px 18px #168bff30}.btn.danger{color:var(--red)}.btn.small{padding:6px 9px;font-size:12px}.btn:hover,.icon-btn:hover{filter:brightness(1.1);transform:translateY(-1px)}.page{display:none}.page.active{display:block;animation:appear .22s ease}@keyframes appear{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}.welcome{background:linear-gradient(110deg,#123b64,#15213d 70%,#28255c);border:1px solid #2d5c86;border-radius:20px;padding:22px 24px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:20px}.welcome h2{font-size:20px;margin:0 0 5px}.welcome p{color:#c5d9ef;margin:0}.welcome .spark{font-size:42px}.grid{display:grid;gap:15px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:20px}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);min-width:0}.stat-top{display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--muted);font-size:12px}.stat-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:11px;background:#168bff20;color:var(--blue);font-size:16px}.stat-value{font-size:clamp(19px,2.2vw,26px);font-weight:800;letter-spacing:-.04em;margin:13px 0 3px;overflow-wrap:anywhere}.stat-foot{font-size:11px;color:var(--muted)}.positive{color:var(--green)}.negative{color:var(--red)}.two-col{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);margin-bottom:18px}.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.section-head h3{margin:0;font-size:15px}.muted{color:var(--muted)}.chart-wrap{height:220px;position:relative}.chart-wrap canvas{width:100%;height:100%;display:block}.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--muted)}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800;padding:11px 10px;border-bottom:1px solid var(--line)}td{padding:13px 10px;border-bottom:1px solid var(--line);font-size:12px}tbody tr:last-child td{border-bottom:0}.trans-name{font-weight:700}.trans-sub{font-size:11px;color:var(--muted)}.pill{display:inline-flex;align-items:center;gap:5px;border-radius:99px;padding:4px 8px;font-size:10px;font-weight:750;background:var(--panel2);color:var(--muted)}.pill.paid,.pill.done{background:#19b9851b;color:var(--green)}.pill.unpaid,.pill.warn{background:#ffb0201b;color:var(--yellow)}.pill.bad{background:#ff52651b;color:var(--red)}.toolbar{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:16px}.field{display:grid;gap:6px;min-width:0}.field label{font-size:11px;color:var(--muted);font-weight:700}.field input,.field select,.field textarea,.toolbar input,.toolbar select{width:100%;min-width:0;background:var(--bg);border:1px solid var(--line);color:var(--text);padding:10px 11px;border-radius:10px}.toolbar input{flex:1;min-width:170px}.toolbar select{width:auto;min-width:140px}.page-title{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:18px}.page-title h2{margin:0;font-size:22px;letter-spacing:-.03em}.page-title p{margin:4px 0 0;color:var(--muted);font-size:12px}.empty{text-align:center;color:var(--muted);padding:30px 12px}.empty .empty-icon{font-size:27px;margin-bottom:7px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field.full{grid-column:1/-1}.field textarea{min-height:76px;resize:vertical}.form-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}.modal-backdrop{display:none;position:fixed;inset:0;background:#020711b8;z-index:50;padding:16px;overflow:auto;align-items:center;justify-content:center}.modal-backdrop.open{display:flex}.modal{width:min(640px,100%);max-height:94vh;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 30px 90px #0007}.modal h2{margin:0 0 5px;font-size:20px}.modal>p{margin:0 0 20px;color:var(--muted);font-size:12px}.toast{position:fixed;right:18px;bottom:18px;z-index:90;padding:12px 16px;border-radius:12px;background:var(--panel2);border:1px solid var(--line);box-shadow:var(--shadow);display:none;max-width:calc(100% - 36px)}.toast.show{display:block;animation:appear .2s}.progress{height:7px;background:var(--line);border-radius:99px;overflow:hidden;margin:9px 0}.progress span{height:100%;display:block;border-radius:99px;background:linear-gradient(90deg,var(--blue),var(--cyan))}.budget-list,.goal-list,.wallet-list{display:grid;gap:12px}.budget-row,.goal-row,.wallet-row{border:1px solid var(--line);border-radius:13px;padding:13px}.row-between{display:flex;justify-content:space-between;gap:12px;align-items:center}.row-between strong{font-size:13px}.row-between small{display:block;color:var(--muted);font-size:11px}.split{display:flex;gap:8px;flex-wrap:wrap}.metric{padding:13px;border:1px solid var(--line);border-radius:12px;background:var(--panel2)}.metric span{display:block;color:var(--muted);font-size:11px}.metric strong{font-size:16px}.mini-grid{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:18px}.notice{padding:12px;border:1px solid #e8b94a40;background:#e8b94a12;border-radius:12px;color:var(--yellow);font-size:12px;margin-bottom:14px}.mobile-menu{display:none}.footer-note{color:var(--muted);font-size:11px;margin-top:18px}.checkline{display:flex;gap:8px;align-items:center}.checkline input{width:auto}.hide{display:none!important}
+@media(max-width:1050px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.two-col{grid-template-columns:1fr}}
+@media(max-width:760px){.app{display:block}.sidebar{position:fixed;z-index:40;left:-270px;top:0;width:250px;transition:left .2s;box-shadow:var(--shadow)}.sidebar.open{left:0}.main{padding:18px 13px 32px}.mobile-menu{display:inline-block}.topbar{align-items:flex-start;margin-bottom:20px}.topbar h1{font-size:22px}.top-actions .desktop-label{display:none}.welcome{padding:18px}.welcome .spark{font-size:30px}.stats{gap:10px}.card{padding:14px;border-radius:15px}.stat-value{font-size:20px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.mini-grid{grid-template-columns:1fr 1fr}.page-title{align-items:flex-start}.page-title .btn{padding:9px;font-size:12px}.toolbar>*{flex:1}.toolbar input{min-width:100%}.toolbar select{width:100%;min-width:0}.chart-wrap{height:190px}}
+@media(max-width:380px){.stats{grid-template-columns:1fr 1fr}.stat-value{font-size:17px}.mini-grid{grid-template-columns:1fr}.top-actions{gap:4px}.icon-btn,.btn{padding:9px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+ <div class="brand"><div class="brand-icon">↗</div><div><strong>CREATOR MONEY</strong><small>MANAGER · IDR</small></div></div>
+ <div class="nav-label">MENU UTAMA</div>
+ <nav class="nav" id="nav">
+  <button class="active" data-page="dashboard"><span class="ico">▦</span>Dashboard</button>
+  <button data-page="income"><span class="ico">↙</span>Pemasukan</button>
+  <button data-page="expense"><span class="ico">↗</span>Pengeluaran</button>
+  <button data-page="clients"><span class="ico">◈</span>Klien & Endorsement</button>
+  <button data-page="budgets"><span class="ico">▤</span>Anggaran</button>
+  <button data-page="savings"><span class="ico">◎</span>Target Tabungan</button>
+  <button data-page="wallets"><span class="ico">▣</span>Dompet & Transfer</button>
+  <button data-page="reports"><span class="ico">▥</span>Laporan</button>
+  <button data-page="settings"><span class="ico">⚙</span>Pengaturan</button>
+ </nav>
+ <div class="sidebar-bottom"><strong>Kelola uang, fokus berkarya.</strong><p>Catat transaksi secara rutin untuk memahami kondisi keuanganmu.</p><button class="btn small" data-goto="reports">Lihat laporan ↗</button></div>
+</aside>
+<main class="main">
+ <header class="topbar"><div><div class="eyebrow">CREATOR FINANCE WORKSPACE</div><h1 id="pageHeading">Dashboard</h1></div><div class="top-actions"><button class="icon-btn mobile-menu" id="menuBtn" aria-label="Buka menu">☰</button><button class="icon-btn" id="themeBtn" title="Ganti tema">☼</button><button class="btn primary" id="quickIncome">＋ <span class="desktop-label">Pemasukan</span></button><button class="btn" id="quickExpense">− <span class="desktop-label">Pengeluaran</span></button></div></header>
+
+ <section class="page active" id="page-dashboard">
+  <div class="welcome"><div><h2>Atur uangmu, besarkan karyamu. ✨</h2><p>“Atur Penghasilan, Kendalikan Pengeluaran, Bangun Masa Depan.”</p></div><div class="spark">💠</div></div>
+  <div class="grid stats" id="dashboardStats"></div>
+  <div class="grid two-col">
+   <div class="card"><div class="section-head"><h3>Arus Kas Bulanan</h3><span class="muted">6 bulan terakhir</span></div><div class="chart-wrap"><canvas id="cashChart"></canvas></div><div class="legend"><span><i class="dot" style="background:var(--green)"></i>Pemasukan diterima</span><span><i class="dot" style="background:var(--red)"></i>Pengeluaran dibayar</span></div></div>
+   <div class="card"><div class="section-head"><h3>Perkembangan Saldo</h3><span class="muted">Estimasi akhir bulan</span></div><div class="chart-wrap"><canvas id="balanceChart"></canvas></div></div>
+  </div>
+  <div class="grid two-col">
+   <div class="card"><div class="section-head"><h3>Transaksi Terbaru</h3><button class="btn small" data-goto="income">Lihat semua ↗</button></div><div id="recentTransactions"></div></div>
+   <div class="card"><div class="section-head"><h3>Pengingat & Tagihan</h3><span>🔔</span></div><div id="reminders"></div></div>
+  </div>
+ </section>
+
+ <section class="page" id="page-income">
+  <div class="page-title"><div><h2>Daftar Pemasukan</h2><p>Pisahkan uang yang sudah diterima dari piutang klien.</p></div><button class="btn primary" id="addIncome">＋ Tambah Pemasukan</button></div>
+  <div class="toolbar"><input id="incomeSearch" placeholder="Cari nama, klien, catatan…"><select id="incomeCategory"><option value="">Semua kategori</option></select><select id="incomeStatus"><option value="">Semua status</option><option value="paid">Sudah dibayar</option><option value="unpaid">Belum dibayar</option></select><input type="date" id="incomeFrom" aria-label="Dari tanggal"><input type="date" id="incomeTo" aria-label="Sampai tanggal"></div>
+  <div class="card"><div id="incomeTable"></div></div>
+ </section>
+
+ <section class="page" id="page-expense">
+  <div class="page-title"><div><h2>Daftar Pengeluaran</h2><p>Pantau biaya produksi, perangkat, dan pengeluaran pribadi.</p></div><button class="btn primary" id="addExpense">＋ Tambah Pengeluaran</button></div>
+  <div class="toolbar"><input id="expenseSearch" placeholder="Cari nama atau catatan…"><select id="expenseCategory"><option value="">Semua kategori</option></select><select id="expenseStatus"><option value="">Semua status</option><option value="paid">Sudah dibayar</option><option value="unpaid">Belum dibayar</option></select><input type="date" id="expenseFrom" aria-label="Dari tanggal"><input type="date" id="expenseTo" aria-label="Sampai tanggal"></div>
+  <div class="card"><div id="expenseTable"></div></div>
+ </section>
+
+ <section class="page" id="page-clients">
+  <div class="page-title"><div><h2>Klien & Endorsement</h2><p>Kelola campaign, deadline, kontrak, dan pembayaran.</p></div><button class="btn primary" id="addClient">＋ Tambah Klien</button></div>
+  <div class="grid mini-grid" id="clientStats"></div><div class="card"><div id="clientsTable"></div></div>
+ </section>
+
+ <section class="page" id="page-budgets">
+  <div class="page-title"><div><h2>Anggaran Bulanan</h2><p>Tentukan batas biaya dan pantau realisasinya.</p></div><button class="btn primary" id="addBudget">＋ Atur Anggaran</button></div>
+  <div class="notice">⚠️ Penggunaan 80% atau lebih dari anggaran akan ditandai sebagai peringatan.</div><div class="card"><div class="section-head"><h3>Anggaran bulan ini</h3><span id="budgetMonth" class="muted"></span></div><div class="budget-list" id="budgetList"></div></div>
+ </section>
+
+ <section class="page" id="page-savings">
+  <div class="page-title"><div><h2>Target Tabungan</h2><p>Alokasi tabungan dicatat terpisah, bukan pengeluaran kedua.</p></div><button class="btn primary" id="addGoal">＋ Target Baru</button></div>
+  <div class="notice">💡 Menyisihkan dana ke target hanya mengubah alokasi. Gunakan menu Dompet untuk memindahkan uang secara nyata antar-akun.</div><div class="grid mini-grid" id="savingsStats"></div><div class="grid" id="goalList"></div>
+ </section>
+
+ <section class="page" id="page-wallets">
+  <div class="page-title"><div><h2>Dompet & Saldo</h2><p>Kelola saldo awal, akun, dan perpindahan uang antar-akun.</p></div><div class="split"><button class="btn" id="transferBtn">⇄ Transfer</button><button class="btn primary" id="addWallet">＋ Dompet</button></div></div>
+  <div class="grid mini-grid" id="walletStats"></div><div class="grid" id="walletList"></div>
+  <p class="footer-note">Transfer antar-akun tidak dihitung sebagai pemasukan atau pengeluaran di laporan gabungan.</p>
+ </section>
+
+ <section class="page" id="page-reports">
+  <div class="page-title"><div><h2>Laporan Keuangan</h2><p>Ringkasan berdasarkan tanggal transaksi.</p></div><div class="split"><button class="btn" id="exportCsv">⇩ Ekspor CSV</button><button class="btn" id="exportPdf">▤ Cetak / PDF</button></div></div>
+  <div class="toolbar"><select id="reportPeriod"><option value="month">Bulan ini</option><option value="week">7 hari terakhir</option><option value="day">Hari ini</option><option value="year">Tahun ini</option><option value="custom">Rentang khusus</option></select><input type="date" id="reportFrom" class="hide"><input type="date" id="reportTo" class="hide"></div>
+  <div class="grid stats" id="reportStats"></div><div class="grid two-col"><div class="card"><div class="section-head"><h3>Arus kas periode</h3></div><div class="chart-wrap"><canvas id="reportChart"></canvas></div></div><div class="card"><div class="section-head"><h3>Pengeluaran per kategori</h3></div><div id="expenseBreakdown"></div></div></div>
+  <div class="card"><div class="section-head"><h3>Ringkasan sumber pemasukan</h3></div><div id="incomeBreakdown"></div></div>
+ </section>
+
+ <section class="page" id="page-settings">
+  <div class="page-title"><div><h2>Pengaturan</h2><p>Preferensi tampilan, data, dan keamanan lokal.</p></div></div>
+  <div class="grid two-col">
+   <div class="card"><div class="section-head"><h3>Profil & Saldo Awal</h3></div><form id="profileForm" class="form-grid"><div class="field full"><label>Nama pemilik / creator</label><input id="ownerName" placeholder="Nama kamu"></div><div class="field full"><label>Saldo awal keseluruhan (Rp)</label><input id="openingBalance" type="number" min="0" step="1" required></div><div class="field full"><label>Catatan</label><div class="muted">Saldo awal adalah saldo saat mulai memakai aplikasi. Sesuaikan jika sudah ada transaksi lama.</div></div><div class="field full"><button class="btn primary">Simpan pengaturan</button></div></form></div>
+   <div class="card"><div class="section-head"><h3>Backup & Restore</h3></div><p class="muted">Ekspor semua data sebagai file JSON untuk cadangan atau pindahkan data ke perangkat lain.</p><div class="split"><button class="btn primary" id="backupBtn">⇩ Backup data</button><button class="btn" id="restoreBtn">⇧ Restore data</button><input id="restoreFile" type="file" accept=".json,application/json" class="hide"></div><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"><div class="section-head"><h3>Reset data</h3></div><p class="muted">Menghapus transaksi, klien, anggaran, target, dan dompet lokal. Tindakan ini tidak dapat dibatalkan tanpa backup.</p><button class="btn danger" id="resetBtn">Hapus semua data…</button></div>
+  </div>
+  <div class="card"><div class="section-head"><h3>Privasi & penyimpanan</h3></div><p class="muted">Versi mandiri ini menyimpan data di localStorage browser pada perangkat ini. Tidak ada akun login, sinkronisasi cloud, koneksi bank otomatis, atau enkripsi khusus. Jangan gunakan perangkat bersama tanpa mengamankan aksesnya. Bukti transaksi disimpan lokal dalam batas kapasitas browser.</p><p class="muted">Untuk pemakaian banyak pengguna atau sinkronisasi aman lintas perangkat, dibutuhkan backend dengan autentikasi dan database.</p></div>
+ </section>
+ <div class="footer-note">CREATOR MONEY MANAGER · Slogan: “Atur Penghasilan, Kendalikan Pengeluaran, Bangun Masa Depan.”</div>
+</main>
+</div>
+<div class="modal-backdrop" id="modalBackdrop"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><h2 id="modalTitle">Tambah data</h2><p id="modalSubtitle">Isi detail berikut.</p><form id="modalForm"><div id="modalFields" class="form-grid"></div><div class="form-actions"><button type="button" class="btn" id="modal
